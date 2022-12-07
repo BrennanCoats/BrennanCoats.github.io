@@ -64,13 +64,31 @@ function getApi() {
     })
       .then(function(data){
         var obj = JSON.parse(JSON.stringify(data));
+        console.log(obj);
         var forecastData;
         var tempData;
         var windData;
         var humidityData;
+        var cloudImg;
         for (var i = 0; i < 6; i++){
           forecastData = document.getElementById('weather0' + [(i + 1)]);
-          forecastData.textContent = obj.list[i].weather[0].description;
+          var weatherImg = document.createElement("img");
+          cloudImg=obj.list[i].weather[0].icon;
+          weatherImg.src = `http://openweathermap.org/img/wn/${cloudImg}@2x.png`;
+          forecastData.appendChild(weatherImg);
+          console.log(weatherImg.src);
+          
+          
+
+          tempData = document.getElementById('temp0' + [(i + 1)]);
+          tempData.textContent = obj.list[i].main.temp + " F";
+
+          windData = document.getElementById('wind0' + [(i + 1)]);
+          windData.textContent = obj.list[i].wind.speed + " MPH";
+
+          humidityData = document.getElementById('humidity0' + [(i + 1)]);
+          humidityData.textContent = obj.list[i].main.humidity + "%";
+
         }
         
       })
