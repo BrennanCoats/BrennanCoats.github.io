@@ -1,0 +1,35 @@
+header:root {
+    --bs-blue: #0d6efd;
+}
+    
+body {
+    font: 1rem/1.5 var(--bs-font-sans-serif);
+}
+
+a {
+    color: var(--bs-blue);
+}
+
+.cityInfo {
+    font-size: larger;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+.days {
+    border: 2px;
+    border-style: double;
+    height: 300px;
+    width: 150px;
+    margin: 50px;
+    position: relative;
+    
+}
+
+#fiveDays {
+    margin: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    
+}
