@@ -19,10 +19,11 @@ a {
 .days {
     border: 2px;
     border-style: double;
-    height: 300px;
-    width: 150px;
+    height: 215px;
+    width: 200px;
     margin: 50px;
     position: relative;
+    padding: 12px;
     
 }
 
@@ -31,5 +32,6 @@ a {
     padding: 25px;
     display: flex;
     flex-direction: row;
-    
+    justify-content: center;
+    left: 10px;
 }

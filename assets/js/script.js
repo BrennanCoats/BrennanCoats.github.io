@@ -18,10 +18,19 @@ $(date03).text(day03.format('MMM D, YYYY'));
 $(date04).text(day04.format('MMM D, YYYY'));
 $(date05).text(day05.format('MMM D, YYYY'));
 
-
+for (var i = 0; i < 5; i++){
+  forecast = document.querySelector('#weather0' + [(i + 1)]);
+  var stockImg = document.createElement("img");
+  stockImg.style.height = '135px';
+  stockImg.style.width = '150px';
+  forecast.appendChild(stockImg);
+  stockImg.src = `https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80`;
+  
+}
 
 
 function getApi() {
+  destroyIcon();
     var city = document.getElementById('cityInput').value;
     var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&cnt=5&APPID=37b99c5b26083bf1ad3685cc2948a7c6&units=imperial`;
     $('input[id="cityInput"]').val('');
@@ -46,7 +55,7 @@ function getApi() {
             //var search = event.AT_TARGET.valueOf(historyBtn);
             console.log('works');
             newGetApi(historyBtn.dataset.name); 
-            //destroyIcon();
+            destroyIcon();
           })
           
 
@@ -101,7 +110,6 @@ function getApi() {
           weatherImg.src = `http://openweathermap.org/img/wn/${cloudImg}@2x.png`;
 
           forecastData.appendChild(weatherImg);
-          console.log(weatherImg.src);
           
           tempData = document.getElementById('temp0' + [(i + 1)]);
           tempData.textContent = obj.list[i].main.temp + " F";
@@ -120,7 +128,7 @@ function getApi() {
   
   function destroyIcon() {
     var oldData;
-        for (var i = 0; i < 6; i++){
+        for (var i = 0; i < 5; i++){
           oldData = document.getElementById('weather0' + [(i + 1)]).lastChild;
           document.getElementById('weather0' + [(i + 1)]).removeChild(oldData);
         }
@@ -137,7 +145,7 @@ function getApi() {
 
 
 function newGetApi(searchHis){
-  console.log(searchHis);
+  destroyIcon();
   
   var newQueryURL = `http://api.openweathermap.org/data/2.5/weather?q=${searchHis}&cnt=5&APPID=37b99c5b26083bf1ad3685cc2948a7c6&units=imperial`;
     $('input[id="cityInput"]').val('');
@@ -193,7 +201,6 @@ function newGetApi(searchHis){
           weatherImg.src = `http://openweathermap.org/img/wn/${cloudImg}@2x.png`;
 
           forecastData.appendChild(weatherImg);
-          console.log(weatherImg.src);
           
           tempData = document.getElementById('temp0' + [(i + 1)]);
           tempData.textContent = obj.list[i].main.temp + " F";
