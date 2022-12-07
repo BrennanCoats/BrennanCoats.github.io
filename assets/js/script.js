@@ -64,12 +64,15 @@ function getApi() {
     })
       .then(function(data){
         var obj = JSON.parse(JSON.stringify(data));
-
-        console.log(obj);
-        var firstDayW = document.getElementById('weather01');
-        console.log(obj.list[0].weather[0].description);
-        firstDayW.textContent = obj.list[0].weather[0].description;
-
+        var forecastData;
+        var tempData;
+        var windData;
+        var humidityData;
+        for (var i = 0; i < 6; i++){
+          forecastData = document.getElementById('weather0' + [(i + 1)]);
+          forecastData.textContent = obj.list[i].weather[0].description;
+        }
+        
       })
 
     
