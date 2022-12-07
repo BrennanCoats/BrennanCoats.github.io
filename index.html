@@ -20,12 +20,12 @@
     ></script>
   </head>
   <body>
-    <header >
-      <h1>Weather Forecast</h1>
+    <header id = "pagetop">
+      <h1 id="header">Weather Forecast</h1>
     </header>
     <main>
-      <section>
-        <div >
+      <section class = "searchStuff" >
+        <div>
             <h2>Search for a city:</h2>
             <input type="text" placeholder="Salt Lake City" id="cityInput"></input>
             <button id="searchBtn" name="searchBtn">Search</button>
@@ -35,30 +35,32 @@
 
         </div>
       </section>
-      <section>
+
+    <div class="infoDisplay">
+      <section class="todaysInfo">
         <div class="cityInfo">
            <span id="cityName" >
            </span>
            <span id="todaysDate">
            </span>
         </div>
-        <div id="tempF" name="tempF">
+        <div class="cityInfo" id="tempF" name="tempF">
             <Span>Temp:</Span>
             <span id="tempfield"></span>
         </div>
-        <div id="windMPH" name="windMPH">
+        <div class="cityInfo" id="windMPH" name="windMPH">
             <span>Wind:</span>
             <span id="windfield"></span>
         </div>
-        <div id="Humidity" name="Humidity">
+        <div class="cityInfo" id="Humidity" name="Humidity">
             <span>Humidity:</span>
             <span id="Humiditylevel"></span>
         </div>
       </section>
+      <div id="forecastTitle" name="5days">
+        <h3>5-Day Forecast:</h3>
+    </div>
       <section id="fiveDays">
-        <div id="5days" name="5days">
-            <h3>5-Day Forecast:</h3>
-        </div>
         <div class="days" id="day01">
             <span id="date01"></span>
             <span id="weather01"></span>
@@ -95,9 +97,11 @@
             <span id="humidity05"></span>
         </div>
         
-        <footer class="card-footer">
-        </footer>
+        
       </section>
+    </div>
+    <footer class="card-footer">
+    </footer>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/js/script.js"></script>

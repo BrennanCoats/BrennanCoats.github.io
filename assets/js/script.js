@@ -3,8 +3,10 @@ var APIkey = '37b99c5b26083bf1ad3685cc2948a7c6';
 var NUMBER_OF_DAYS = 6;
 var searchHis;
 
+//displays the current date//
 const today = dayjs();
 $('#todaysDate').text(today.format('MMM D, YYYY'));
+//-----------------------------------//
 
 const day01 = dayjs().add(1, 'day')
 const day02 = dayjs().add(2, 'day')

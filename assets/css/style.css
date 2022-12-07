@@ -1,7 +1,91 @@
-header:root {
-    --bs-blue: #0d6efd;
+html {
+    
+    color: antiquewhite;
+}
+
+#pagetop {
+    background-color: rgb(32, 174, 231);
+}
+
+#header {
+    position: relative;
+    left: 35%;
+    background-color: rgb(32, 174, 231);
+    color: aliceblue;
+    font-size: 400%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(154, 205, 234);
 }
     
+.searchStuff {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#searchHis {
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+}
+#cityInput {
+    margin: 10px;
+    height: 35px;
+    width: 260px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchBtn {
+    margin: 10px;
+    height: 35px;
+    width: 260px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#hisBtn {
+    height: 35px;
+    width: 260px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    background-color: rgb(27, 193, 238);
+    border-radius: 5rem;
+    border-style: ridge;
+    margin: 10px;
+}
+
+#hisBtn:hover {
+    background-color: rgb(127, 138, 149);
+    border-style: inset;
+
+}
+.infoDisplay {
+    display: flex;
+    flex-direction: column;
+}
+
+.todaysInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    margin: 35px;
+}
+
+#cityName {
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bolder;
+}
+
 body {
     font: 1rem/1.5 var(--bs-font-sans-serif);
 }
@@ -14,6 +98,18 @@ a {
     font-size: larger;
     font-weight: bolder;
     font-style: oblique;
+    margin: 15px;
+    margin-top: 1px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(154, 205, 234);
+}
+
+#todaysDate {
+    font-style: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
 }
 
 .days {
@@ -21,14 +117,21 @@ a {
     border-style: double;
     height: 215px;
     width: 200px;
-    margin: 50px;
+    margin: 15px;
     position: relative;
     padding: 12px;
+    display: flex;
+    flex-direction: column;
     
 }
 
+#forecastTitle {
+    position: relative;
+    left: 10%;
+}
+
 #fiveDays {
-    margin: 25px;
+    margin: 20px;
     padding: 25px;
     display: flex;
     flex-direction: row;
