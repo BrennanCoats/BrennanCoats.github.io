@@ -1,6 +1,7 @@
 var fetchButton = document.getElementById('searchBtn');
 var APIkey = '37b99c5b26083bf1ad3685cc2948a7c6';
 var NUMBER_OF_DAYS = 6;
+var searchHis;
 
 const today = dayjs();
 $('#todaysDate').text(today.format('MMM D, YYYY'));
@@ -24,6 +25,14 @@ function getApi() {
 
     var city = document.getElementById('cityInput').value;
     var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&cnt=5&APPID=37b99c5b26083bf1ad3685cc2948a7c6&units=imperial`;
+    
+    localStorage.setItem("city", JSON.stringify(city));
+          searchHis = JSON.parse(localStorage.getItem("city"));
+          console.log(searchHis);
+          var cityHis = document.getElementById('searchHis');
+          var historyBtn = document.createElement("button");
+          historyBtn.innerHTML = searchHis;
+          cityHis.appendChild(historyBtn);
 
     fetch(queryURL)
       .then(function (response) {
@@ -44,7 +53,6 @@ function getApi() {
         var cityName = document.getElementById('cityName');
         cityName.textContent = obj.name;
         
-        //var lat = 
         var lon = obj.coord.lon;
         var lat = obj.coord.lat;
         
@@ -78,8 +86,6 @@ function getApi() {
           forecastData.appendChild(weatherImg);
           console.log(weatherImg.src);
           
-          
-
           tempData = document.getElementById('temp0' + [(i + 1)]);
           tempData.textContent = obj.list[i].main.temp + " F";
 
@@ -88,9 +94,7 @@ function getApi() {
 
           humidityData = document.getElementById('humidity0' + [(i + 1)]);
           humidityData.textContent = obj.list[i].main.humidity + "%";
-
         }
-        
       })
 
     
@@ -99,4 +103,5 @@ function getApi() {
   fetchButton.addEventListener('click', getApi);
 
 
+  
   
